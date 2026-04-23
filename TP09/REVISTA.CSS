@@ -1,0 +1,76 @@
+body {
+    background-color: lightslategray;
+}
+
+header {
+    background-color: lightblue;
+    border: 4px solid blue;
+    margin: 4px;
+    padding: 14px;
+    line-height: 1.5;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.encabezado {
+    background-color: rgb(218, 214, 8);
+    border-left: 12px rebeccapurple solid;
+    margin: 24px;
+    padding: 4px;
+}
+
+.encabezado #btn {
+
+    border-bottom: 12px;
+    background-color: red;
+    color: white;
+    font-weight: 600;
+    padding: 10px;
+    display: inline-block;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+.medio-2 .cuadros-me{
+
+
+}
+
+
+
+.abajo {
+    margin: 12px;
+    background-color: white;
+    border-top: 3px solid green;
+
+}
+
+.abajo #eco {
+    background-color: lightpink;
+    line-height: 1.8;
+    border-bottom: 2px solid lightsalmon;
+    cursor: pointer;
+}
+
+.abajo h1 {
+
+    margin: 12px;
+    padding: 12px;
+}
+
+.abajo h3 {
+    border-bottom: 2px solid lightsalmon;
+    margin: 12px;
+    padding: 12px;
+    cursor: pointer;
+}
+
+
+
+
+
+footer {
+    background-color: red;
+    color: white;
+    text-align: center;
+    padding: 26px;
+}

@@ -1,0 +1,65 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-color: gray;
+}
+
+header {
+    background-color: black;
+    color: white;
+    padding: 20px;
+}
+
+header nav {
+    margin-top: 16px;
+}
+
+
+header nav a {
+    text-decoration: none;
+    color: inherit;
+    margin-right: 16px;
+
+}
+
+
+.viajes {
+    background-color: white;
+    padding: 32px;
+    margin: 32px;
+    cursor: pointer;
+    border: 1px solid black;
+    line-height: 1.8;
+}
+
+.viajes a {
+    text-decoration: none;
+    font-family: cursive;
+    color: blue;
+
+}
+
+main :hover {
+    background-color: red;
+
+}
+
+.viajes a:hover {
+    text-decoration: underline;
+}
+
+span {
+    color: blue;
+}
+
+footer {
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 16px;
+}

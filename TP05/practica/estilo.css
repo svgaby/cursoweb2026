@@ -1,0 +1,76 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-color: gray;
+
+}
+
+header {
+    background-color: black;
+    color: white;
+    padding: 32px;
+}
+
+header nav a {
+    text-decoration: none;
+    color: inherit;
+    margin-right: 16px;
+
+}
+
+header nav {
+    margin-top: 16px;
+}
+
+.card {
+    background-color: white;
+    padding: 16px;
+    width: 250px;
+    margin: 16px;
+    display: inline-block;
+}
+
+.card img {
+    width: 200px;
+    height: 200px;
+}
+
+.card div {
+    margin-top: 12px;
+}
+
+.card .precio {
+    color: green;
+font-size: 25px;
+font-weight: 10px;
+
+}
+.card .btn{
+    background-color: blue;
+    color: white;
+    font-weight: 600;
+    padding: 6px;
+    text-align: center;
+    cursor: pointer; 
+
+}
+
+section{
+    padding: 16px;
+}
+section div{
+    background-color: white;
+    padding: 16px;
+    margin-top: 16px;
+}
+footer{
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 16px;
+}
