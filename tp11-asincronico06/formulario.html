@@ -21,32 +21,76 @@
             <a href="#">Otros</a>
             <a href="#">Contactos</a>
         </nav>
-<form action="" method="get">
-    <label for="nonbre">Nombre</label>
-    <input type="text" id="nonbre" name="nombre" required placeholder="Ingrese Su Nombre">
-    <label for="apellido">Apellido</label>
-    <input type="text" name="" id="apellido" name="apellido" required placeholder="Ingrese Su Apellido">
+        <form action="" method="get">
+            <label for="nonbre">Nombre</label>
+            <input type="text" id="nonbre" name="nombre" required placeholder="Ingrese Su Nombre">
 
-<label for="DNI">D.N.I</label>
-<input type="text" id="DNI" name="DNI" minlength="7" maxlength="8">
-<label for="EMAIL">Correo Electronico</label>
-<input type="email" name="EMAIL" id="EMAIL">
-<label for="telefono">Telefono</label>
-<input type="tel" name="telefono" id="telefono" value="+54911">
-<label for="nacimiento">Fecha de Nacimiento</label>
-<input type="date" name="nacimiento" id="nacimiento">
-<label for="file">Adjuntar Archivo</label>
-<input type="file" name="file" id="file">
+            <label for="apellido">Apellido</label>
+            <input type="text" name="" id="apellido" name="apellido" required placeholder="Ingrese Su Apellido">
+
+            <label for="DNI">D.N.I</label>
+            <input type="text" id="DNI" name="DNI" minlength="7" maxlength="8">
+
+            <label for="EMAIL">Correo Electronico</label>
+            <input type="email" name="EMAIL" id="EMAIL">
+
+            <label for="telefono">Telefono</label>
+            <input type="tel" name="telefono" id="telefono" value="+54911">
+
+            <label for="nacimiento">Fecha de Nacimiento</label>
+            <input type="date" name="nacimiento" id="nacimiento">
+
+            <label for="file">Adjuntar Archivo</label>
+            <input type="file" name="file" id="file">
+
+            <span>
+                <h2>GENERO</h2>
+                <input type="radio" id="max" name="genero" value="masculino">
+                <label for="max">Masculino</label><br>
+
+                <input type="radio" id="fem" name="genero" value="femenino">
+                <label for="fem">Femenino</label><br>
+
+                <input type="radio" id="bin" name="genero" value="bin">
+                <label for="bin">Binatio</label><br>
+
+                <input type="radio" id="nr" name="genero" value="nr">
+                <label for="nr">No responde</label><br>
+
+            </span>
+
+            <label for="nacionalidad">Nacionalidad</label>
+
+            <select name="nacionalidad" id="nacionalidad">
+
+                <option value="arg">Argentina</option>
+                <option value="br">Brasil</option>
+                <option value="pry">Paraguay</option>
+                <option value="" selected disabled>Selecionar su Pais</option>
+            </select>
+
+            <span>
+                <h2>Cursos de su interes</h2>
+                <input type="checkbox" name="pw" id="pw" value="programacionweb">
+                <label for="pw">Programacion Web</label><br>
+
+                <input type="checkbox" name="nt" id="nt" value="natacion">
+                <label for="nt">Natacion</label><br>
+
+                <input type="checkbox" name="p3d" id="p3d" value="pragramacion 3d">
+                <label for="p3d">Programacion 3D</label><br>
+            </span>
+
+            <h2>Comentarios</h2>
+            <textarea name="comentrario" id="comentario" cols="35" rows="10" maxlength="256"
+                placeholder="Maximo 256 caracteres"></textarea><br>
+
+            <button type="submit">Enviar</button>
+            <button type="reset">Limpiar</button>
 
 
 
-
-<button type="submit">Enviar</button>
-<button type="reset">Limpiar</button>
-
-
-
-</form>
+        </form>
 
 
     </div>
