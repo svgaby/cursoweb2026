@@ -1,0 +1,49 @@
+*{padding: 0;
+margin: 0;
+box-sizing: border-box;
+}
+
+body{
+    background-color: lightgreen;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    padding: 2em;
+    transition: 2s;
+
+}
+
+body > div {
+    display: flex;
+    gap: 1em;
+}
+
+h1 > div{
+    color: white;
+    gap: 1em;
+
+}
+#formulario {
+display: flex;
+background-color: cyan;
+padding: 1em;
+flex-direction: column;
+gap: 1em;
+}
+
+#formulario > form{
+display: flex;
+flex-direction: column;
+gap: 1em;
+}
+
+#formulario >form input{
+    padding: 0.5em;
+}
+
+#respuesta{
+    display: flex;
+    flex-direction: column;
+    background-color: black;
+    color: white;
+    gap:  1em;
+    padding: 1em;
+}
