@@ -1,0 +1,61 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    background-color: rgb(3, 48, 3);
+}
+
+h1 {
+ border-bottom: 2px solid white; 
+ color: white;
+
+}
+.caja {
+    background-color: white;
+    flex-direction: column;
+    display: flex;
+    gap: 0.7em;
+    max-width: 500px;
+    padding: 1em;
+position: relative;
+}
+.cajas input{
+    padding: 0.3em;
+}
+
+.btn{
+ background-color: darkslategrey;
+ color: white;
+ display: inline-block;
+ width: fit-content;
+ padding: 0.3em;
+ cursor: pointer;
+}
+
+.error{background-color: darkred;
+color: white;
+font-weight: 600;
+padding: 0.7em;
+max-width: 200px;
+position: fixed;
+bottom: 1.5em;
+right: 1.5em;
+transform: translateY(100px);
+transition: 1s;
+}
+
+#contador{
+    background-color: darkslategrey;
+    color: white;
+ padding: 0.3em;
+ font-weight: 600;
+position: absolute;
+top: 0.3em;
+right: 0.3em;
+}
