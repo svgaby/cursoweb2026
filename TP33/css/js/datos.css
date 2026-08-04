@@ -1,0 +1,66 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --colorPrimario: rgb(80, 0, 229);
+    --colorSecundario: rgba(223, 7, 61, 0.559);
+    --colorTerciario: rgb(60, 0, 35);
+    --colorTexto: white;
+}
+
+body {
+    background-color: var(--colorTerciario);
+    color: var(--colorTexto);
+    padding: 2em;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    flex-direction: column;
+    gap: 1em;
+}
+
+#cursos {
+    display: flex;
+    gap: 1em;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    max-width: 16em;
+    background-color: var(--colorTexto);
+    color: var(--colorTerciario);
+    padding: 1em;
+
+    h1 {
+        font-size: 1.5em;
+    }
+}
+
+.btn{
+    background-color: var(--colorSecundario);
+    color: var(--colorTexto);
+    padding: 0.3em;
+    width: fit-content;
+    cursor: pointer;
+    border-radius: 0.4em;
+
+}
+
+#detalles{
+     display: none;
+     flex-direction: column;
+    gap: 1em;
+background-color: var(--colorSecundario);
+    padding: 1em;
+}
+
+#listaAlumno{
+    flex-direction: row;
+    display: flex;
+    padding: 1em;
+    
+    gap: 1em;
+}
