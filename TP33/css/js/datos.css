@@ -58,9 +58,11 @@ background-color: var(--colorSecundario);
 }
 
 #listaAlumno{
-    flex-direction: row;
+    /* flex-direction: row;
     display: flex;
     padding: 1em;
-    
-    gap: 1em;
+    gap: 1em; */
+display: flex;
+gap: 1em;
+
 }
