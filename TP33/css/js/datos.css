@@ -17,7 +17,7 @@ body {
     padding: 2em;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     flex-direction: column;
-    gap: 1em;
+    gap: 2em;
 }
 
 #cursos {

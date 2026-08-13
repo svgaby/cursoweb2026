@@ -1,0 +1,81 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root {
+    --colorPrimario: rgb(159, 103, 131);
+    --colorSecundario: rgba(89, 44, 55, 0.559);
+    --colorTerciario: rgba(4, 46, 62, 0.759);
+    --colorTexto: white;
+}
+body{
+     background-color: rgba(110, 107, 107, 0.792);
+min-height: 200vh;
+letter-spacing: 1px;
+
+
+
+}
+
+#cont{
+    background-color: var(--colorTerciario);
+    color: var(--colorTexto);
+    padding: 2em;
+    justify-self: center;
+    align-items: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    flex-direction: column;
+    display: flex;
+    gap: 2em;
+}
+
+#cont > div{
+    background-color: var(--colorSecundario);
+padding: 1em;
+display: flex;
+flex-direction: column;
+
+}
+
+table{
+    border-radius: 2em;
+    border-color: brown;
+border-collapse: collapse;
+border: 2px solid black;
+
+}
+table th, table td{
+    border: 1px solid black;
+    padding: 0.3em;
+    color: white;
+
+}
+
+table th{
+    background-color: darkcyan;
+
+}
+table tr{
+    background-color: lightsalmon;
+}
+.btn{
+    padding: 0.3em;
+    background-color: blue;
+    cursor: pointer;
+    font-weight: 600;
+    width: fit-content;
+    transition: 0.5s;
+    display: inline-flex;
+
+}
+
+.btn:hover{
+    background-color: var(--colorTerciario);
+}
+
+input{
+    padding: 0.3em;
+    border-radius: 0.3em;
+    border: none;
+}
