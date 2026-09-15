@@ -1,6 +1,10 @@
 const http = require("http");
+// import {  } from "http";
+
 const fs = require("fs");
 const url = require("url");
+
+
 
 http.createServer((req,res)=> {
 fs.readFile("index.html", (error, datos)=>{
