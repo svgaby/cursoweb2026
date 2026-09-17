@@ -4,12 +4,12 @@ import {rutas} from "./src/routes/main.routes.js";
 
 const app = express();
 
-app.use(express.static("public"));
+app.use(express.static("public"));  //palabra igual que la carpeta
 app.use(express.urlencoded({
     extended: false,
 }));
 
-app.use("/", rutas)
+app.use("/", rutas) 
 
 app.use((req,res)=>{
     res.send("error 404 --- Pagina Inexistente ---")
