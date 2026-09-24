@@ -14,5 +14,8 @@ import * as controllersMain from "../controllers/main.controlles.js"
 rutas.post */
 
 import * as middlewaresMain from "../middlewares/main.midd.js"
+import * as controllersProductos from "../controllers/productos.controllers.js"
 
 rutas.post("/login",middlewaresMain.validarLogin ,controllersMain.loginPost );
+
+rutas.get("/productos", controllersProductos.getProductos)
