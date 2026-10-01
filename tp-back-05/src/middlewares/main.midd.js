@@ -19,3 +19,11 @@ console.log("--> Validacion de login exitosa");
 next();
 
 }
+
+export const verificarLogin = (req, res, next) => {
+    if(!req.session?.user){
+        res.redirect("/login.html");
+        return;
+    }
+next();
+}
