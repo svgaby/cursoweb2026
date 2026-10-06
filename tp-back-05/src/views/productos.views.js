@@ -27,3 +27,39 @@ export const vistaProductos = (productos) => {
 </body>`;
     return vista;
 }
+
+export const crearProducto = () => {
+    let vista = `<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home de mi empresa</title>
+    <link rel="stylesheet" href="/css/estilo.css">
+</head>
+<body>
+    <header>Home de mi empresa</header>
+    <nav>
+        <a href="/index.html">Home</a>
+        <a href="/productos">Productos</a>
+        <a href="/contactos.html">Contactos</a>
+        <a href="/panel">Panel</a>
+    </nav>
+    <main>
+      <form method="post" accion="/productos/crear">
+          <input type="text"
+      name="descripcion"
+      placeholder="Descripcion"
+      require>
+          <input type"text"
+      name="precio"
+      placeholder="Precio"
+      require>
+      <input type="submit"
+      value="Crear">
+          </form>
+    </main>
+    <footer>
+        Creado por LORD-SGON &copy;2026
+    </footer>
+</body>`;
+    return vista;
+}

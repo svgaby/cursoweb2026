@@ -1,6 +1,7 @@
 import "dotenv/config";
 import express from "express";
 import {rutas} from "./src/routes/main.routes.js";
+import {rutasProductos} from "./src/routes/productos.routes.js";
 import session from "express-session";
 
 
@@ -17,10 +18,11 @@ app.use(session({
     saveUninitialized: false
 }))
 
-app.use("/", rutas) 
+app.use("/", rutas); 
+app.use("/", rutasProductos);
 
 app.use((req,res)=>{
-    res.send("error 404 --- Pagina Inexistente ---")
+    res.send("error 404 --- Pagina Inexistente ---");
 });
 
 app.listen(process.env.PORT, () => {

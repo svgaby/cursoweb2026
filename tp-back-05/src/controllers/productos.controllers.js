@@ -5,7 +5,7 @@ export const getProductos = async(req, res) => {
     console.log("--> getProductos en ejecucion");
     try {
         // Leer productos de la BD
-        const productos = await serviciosPorductos.getProductos();
+        const productos = await serviciosProductos.getProductos();
         // Crear vista para el cliente
         const vista = vistasProductos.vistaProductos(productos[0]);
         // Enviar vista en la respuesta
@@ -17,3 +17,44 @@ export const getProductos = async(req, res) => {
     }
     
 }
+
+export const crearProducto = async (req,res) => {
+console.log("--> crearProducto en ejecucion");
+try {
+    // crear vista
+    const vista = vistasProductos.crearProducto()
+    // eneviar vista en respuesta
+    res.send(vista);
+    return;
+} catch (error) {
+    console.log("Error en crearProducto", error.message);
+    res.status(503).send("Ups, ocurrio un error")
+    return;
+}
+};
+
+export const crearProductoPost= async (req,res) => {
+console.log("---> crearProductosPost  en ejecucion");
+try {
+    // leer datos del post
+    const descripcion = req.body.descripcion;
+    const precio = req.body.precio;
+    // validar datos del post
+    if(descripcion.trim() === "" ||  
+    precio.trim()=== "" || 
+    isNaN(parseFloat(precio))){
+        res.send("Completar todos los campos requeridos");
+        return;
+    }
+    // grabar datos en BD
+    const respuesta = await serviciosProductos.crearProducto(descripcion,precio);
+    // Captura de error
+    // redirigir usuario a vis de producto
+res.redirect("/productos");
+return;
+} catch (error) {
+    console.log("Error en crearProductosPost", error.message);
+    res.status(503), send ("Ups, ocurrio un error");
+    return;
+}
+};

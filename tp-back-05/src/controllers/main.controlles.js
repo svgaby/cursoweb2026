@@ -41,3 +41,15 @@ export const getDashboard = (req,res)=>{
         return;
     }
 }
+
+export const logOut = (req,res ) => {
+    req.session.destroy( (error) => {
+        if(error){
+            res.status(500).send("No pudo cerrar la sesion");
+            return;
+        }
+        res.clearCookie("connect.sid");
+        res.redirect("login.html");
+        return;
+    } );
+}

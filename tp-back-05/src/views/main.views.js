@@ -7,7 +7,14 @@ export const mainDashboard = (user) => {
     <link rel="stylesheet" href="/css/estilo.css">
 </head>
 <body>
-    <header>Home de mi empresa</header>
+    <header>
+    Home de mi empresa
+    <div id="usuario">
+    <span>🤵</span>
+    <span>${user?.usuario || "usuario"}</span>
+    <a href="/logout">Cerrar Sesion</a>
+    </div>
+    </header>
     <nav>
         <a href="index.html">Home</a>
         <a href="/productos">Productos</a>
@@ -17,7 +24,7 @@ export const mainDashboard = (user) => {
     <main>
     <h1> Panel de control </h1>
     <div> BIENVENIDO ${user?.usuario || "usuario no logueado"}!!!!</div>
-
+    <a href="/productos/crear">Crear Productos</a>
     </main>
     <footer>
         Creado por LORD-SGON &copy;2026
