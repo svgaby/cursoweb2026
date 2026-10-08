@@ -14,10 +14,22 @@ export const crearProducto = async (descripcion, precio) =>{
     console.log("--> servicio crearProductos en ejecucion");
     try {
         // grabar en BD
-const respuesta = await configDatabase.query(`INSERT INTO produstos (DESCRIPCION,PRECIO) VALUES ("${descripcion}", "${precio}")`)
+const respuesta = await configDatabase.query(`INSERT INTO productos (DESCRIPCION,PRECIO) VALUES ("${descripcion}", "${precio}")`)
         // devolver respuesta de BD
     } catch (error) {
         console.log("Error en servicio crearProducto", error.message);
         throw new Error("Error en servicio crearProducto")
     }
 }
+
+export const getProductoId = async(id)=>{
+  console.log ("servicio editarProductos ID en ejecucion");
+  try {
+ // editar en BD
+ const producto= await configDatabase.query(`SELECT * FROM productos WHERE eliminado=0 AND id=${id}`);   
+console.log(producto);
+ return producto;  
+} catch (error) {
+    
+  }
+};

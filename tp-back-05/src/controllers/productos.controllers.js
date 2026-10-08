@@ -1,7 +1,7 @@
-import * as serviciosPorductos from "../services/productos.services.js";
+import * as serviciosProductos from "../services/productos.services.js";
 import * as vistasProductos from "../views/productos.views.js";
 
-export const getProductos = async(req, res) => {
+export const getProductos = async (req, res) => {
     console.log("--> getProductos en ejecucion");
     try {
         // Leer productos de la BD
@@ -15,46 +15,82 @@ export const getProductos = async(req, res) => {
         console.log(error.message);
         res.status(503).send("Ups, ocurrio un error")
     }
-    
+
 }
 
-export const crearProducto = async (req,res) => {
-console.log("--> crearProducto en ejecucion");
-try {
-    // crear vista
-    const vista = vistasProductos.crearProducto()
-    // eneviar vista en respuesta
-    res.send(vista);
-    return;
-} catch (error) {
-    console.log("Error en crearProducto", error.message);
-    res.status(503).send("Ups, ocurrio un error")
-    return;
-}
-};
-
-export const crearProductoPost= async (req,res) => {
-console.log("---> crearProductosPost  en ejecucion");
-try {
-    // leer datos del post
-    const descripcion = req.body.descripcion;
-    const precio = req.body.precio;
-    // validar datos del post
-    if(descripcion.trim() === "" ||  
-    precio.trim()=== "" || 
-    isNaN(parseFloat(precio))){
-        res.send("Completar todos los campos requeridos");
+export const crearProducto = async (req, res) => {
+    console.log("--> crearProducto en ejecucion");
+    try {
+        // crear vista
+        const vista = vistasProductos.crearProducto()
+        // eneviar vista en respuesta
+        res.send(vista);
+        return;
+    } catch (error) {
+        console.log("Error en crearProducto", error.message);
+        res.status(503).send("Ups, ocurrio un error")
         return;
     }
-    // grabar datos en BD
-    const respuesta = await serviciosProductos.crearProducto(descripcion,precio);
-    // Captura de error
-    // redirigir usuario a vis de producto
-res.redirect("/productos");
-return;
-} catch (error) {
-    console.log("Error en crearProductosPost", error.message);
-    res.status(503), send ("Ups, ocurrio un error");
-    return;
-}
 };
+
+export const crearProductoPost = async (req, res) => {
+    console.log("---> crearProductosPost  en ejecucion");
+    try {
+        // leer datos del post
+        const descripcion = req.body.descripcion;
+        const precio = req.body.precio;
+        // validar datos del post
+        if (descripcion.trim() === "" ||
+            precio.trim() === "" ||
+            isNaN(parseFloat(precio))) {
+            res.send("Completar todos los campos requeridos");
+            return;
+        }
+        // grabar datos en BD
+        const respuesta = await serviciosProductos.crearProducto(descripcion, precio);
+        // Captura de error
+        // redirigir usuario a vis de producto
+        res.redirect("/productos");
+        return;
+    } catch (error) {
+        console.log("Error en crearProductosPost", error.message);
+        res.status(503).send("Ups, ocurrio un error");
+        return;
+    }
+};
+
+export const editarProducto = async (req, res) => {
+    console.log("---> editarProducto en ejecucion");
+    console.log(req.params.id);
+    try {
+        const id = parseInt(req.params.id)
+        if (isNaN(id) || id < 1) {
+            res.status(400).send("ID invalido");
+            return;
+        }
+        const producto = await serviciosProductos.getProductoId(id);
+
+    } catch (error) {
+        console.log("Error en editarProductos", error.message);
+        res.status(400).send("Ups, ocurrio un error");
+        return;
+    }
+
+}
+
+export const editarProductoPost = async (req, res) => {
+    console.log("---> editarProductoPost en ejecucion");
+    console.log(req.params.id);
+    try {
+        const id = parseInt(req.params.id)
+        if (isNaN(id) || id < 1) {
+            res.status(400).send("ID invalido");
+            return;
+        }
+    } catch (error) {
+        console.log("Error en editarProductosPost", error.message);
+        res.status(400).send("Ups, ocurrio un error");
+        return;
+    }
+
+}
