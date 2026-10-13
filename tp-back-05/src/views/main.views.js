@@ -25,10 +25,12 @@ export const mainDashboard = (user) => {
     <h1> Panel de control </h1>
     <div> BIENVENIDO ${user?.usuario || "usuario no logueado"}!!!!</div>
     <a href="/productos/crear">Crear Productos</a>
+     <a href="#" id="editarProducto">Editar Producto</a>
     </main>
     <footer>
         Creado por LORD-SGON &copy;2026
     </footer>
+    <script src="/script/dashboard.js"></script>
 </body>`;
     return vista;
 }

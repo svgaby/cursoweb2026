@@ -69,10 +69,16 @@ export const editarProducto = async (req, res) => {
             return;
         }
         const producto = await serviciosProductos.getProductoId(id);
+if(producto===undefined){
+res.status(400).send("Producto Inexisten");
+            return;
+}
+const vista = vistasProductos.editarProducto(producto);
+return res.send(vista);
 
     } catch (error) {
         console.log("Error en editarProductos", error.message);
-        res.status(400).send("Ups, ocurrio un error");
+        res.status(503).send("Ups, ocurrio un error");
         return;
     }
 
@@ -81,12 +87,21 @@ export const editarProducto = async (req, res) => {
 export const editarProductoPost = async (req, res) => {
     console.log("---> editarProductoPost en ejecucion");
     console.log(req.params.id);
+    console.log(req.body);
     try {
         const id = parseInt(req.params.id)
         if (isNaN(id) || id < 1) {
             res.status(400).send("ID invalido");
             return;
         }
+        //validar req.body
+        const respuesta = await serviciosProductos.updateProducto(id, req.body);
+    if (respuesta[0].affectedRows !=1){
+        res.status(500).send("ups , ocurrrio un error");
+        return;
+    }
+        res.send("datos actualizados <a href='/panel'>VOLVER</a>");
+    return;
     } catch (error) {
         console.log("Error en editarProductosPost", error.message);
         res.status(400).send("Ups, ocurrio un error");

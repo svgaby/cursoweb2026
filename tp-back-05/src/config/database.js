@@ -14,7 +14,7 @@ export const pool = mysql.createPool({
 export const query = async (sql) => {
     try {
         const resp = await pool.query(sql);
-        console.log(resp)
+        // console.log(resp)
         return resp;
     } catch (error) {
         console.error("Error en la query" + error.message);
