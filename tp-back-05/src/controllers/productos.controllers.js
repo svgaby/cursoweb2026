@@ -69,12 +69,12 @@ export const editarProducto = async (req, res) => {
             return;
         }
         const producto = await serviciosProductos.getProductoId(id);
-if(producto===undefined){
-res.status(400).send("Producto Inexisten");
+        if (producto === undefined) {
+            res.status(400).send("Producto Inexisten");
             return;
-}
-const vista = vistasProductos.editarProducto(producto);
-return res.send(vista);
+        }
+        const vista = vistasProductos.editarProducto(producto);
+        return res.send(vista);
 
     } catch (error) {
         console.log("Error en editarProductos", error.message);
@@ -96,16 +96,57 @@ export const editarProductoPost = async (req, res) => {
         }
         //validar req.body
         const respuesta = await serviciosProductos.updateProducto(id, req.body);
-    if (respuesta[0].affectedRows !=1){
-        res.status(500).send("ups , ocurrrio un error");
-        return;
-    }
+        if (respuesta[0].affectedRows != 1) {
+            res.status(500).send("ups , ocurrrio un error");
+            return;
+        }
         res.send("datos actualizados <a href='/panel'>VOLVER</a>");
-    return;
+        return;
     } catch (error) {
         console.log("Error en editarProductosPost", error.message);
         res.status(400).send("Ups, ocurrio un error");
         return;
     }
 
+}
+
+export const eliminarProducto = async (req, res) => {
+    console.log("----> Eliminar Producto en ejecucion");
+    console.log(req.params.id)
+    try {
+        const id = parseInt(req.params.id)
+        if (isNaN(id) || id < 1) {
+            res.status(400).send("ID invalido");
+            return;
+        }
+        const respuesta = await serviciosProductos.deleteProducto(id);
+        if (respuesta[0].affectedRows != 1) {
+            res.status(500).send("Ups, ocurrio un error");
+            return;
+        }
+        res.send("Producto eliminado <a href='/panel'>VOLVER</a>");
+        return;
+    } catch (error) {
+        console.log("Error en elimarProductosPost", error.message);
+        res.status(503).send("Ups, ocurrio un error");
+        return;
+    }
+}
+
+export const listaProducto = async (req,res) => {
+    console.log("---> lista producto en ejecucion")
+    try {
+        // leer los productos de la BD (TODOS)
+        const producto = await serviciosProductos.getProductosTodos();
+        // con los productos crear la vista
+        const vista = vistasProductos.vistaProductosLista(producto[0]);
+        // enviar vista al usuario
+        res.send(vista);
+        return;
+    } catch (error) {
+        
+        console.log("Error en elimarProductosPost", error.message);
+        res.status(503).send("Ups, ocurrio un error");
+        return;
+    }
 }

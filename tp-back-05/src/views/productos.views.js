@@ -12,7 +12,7 @@ export const vistaProductos = (productos) => {
         <a href="index.html">Home</a>
         <a href="/productos">Productos</a>
         <a href="contactos.html">Contactos</a>
-        <a href="login.html">Login</a>
+        <a href="/panel">Panel</a>
     </nav>
     <main class="cardCont">
         ${productos.map(producto => `<div class="card">
@@ -98,6 +98,59 @@ export const editarProducto = (producto) => {
       value="EDITAR">
       
         </form>
+    </main>
+    <footer>
+        Creado por LORD-SGON &copy;2026
+    </footer>
+</body>`;
+    return vista;
+}
+
+export const vistaProductosLista = (productos) => {
+    // crear la vista HTML
+    let vista = `<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home de mi empresa</title>
+    <link rel="stylesheet" href="/css/estilo.css">
+</head>
+<body>
+    <header>Home de mi empresa</header>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="/productos">Productos</a>
+        <a href="contactos.html">Contactos</a>
+        <a href="/panel">Panel</a>
+    </nav>
+    <main>
+    <table class="tablaProducto">
+    <thead>
+    <tr>
+        <th>Descripcion</th>
+        <th>Precio</th>
+        <th>Categoria</th>
+        <th>Eliminado</th>
+        <th>Acciones</th>
+    </tr>
+    </thead>
+    
+    <tbody>
+        ${productos.map( producto => `
+            <tr>
+            <td>${producto.descripcion}</td>
+            <td>$${producto.precio}</td>
+            <td>${producto.categoria}</td>
+            <td>${producto.eliminado == 1 ? "SI" : "NO"}</td>
+            <td>
+            <a href="/productos/editar/${producto.id}">Editar</a>
+            <a href="/productos/eliminar/${producto.id}">Eliminar</a>
+            </td>
+            </tr>
+            `).join("")
+        }
+    </tbody>
+    </table>    
+   
     </main>
     <footer>
         Creado por LORD-SGON &copy;2026

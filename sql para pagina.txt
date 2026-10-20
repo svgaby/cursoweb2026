@@ -1,0 +1,9 @@
+INSERT into usuarios (usuario, CONTRASENIA) VALUES ("gaby", "123")
+
+
+
+-------------------------
+
+procutos  sql
+
+INSERT into productos () VALUES ()
