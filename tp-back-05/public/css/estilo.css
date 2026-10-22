@@ -1,15 +1,17 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-:root{
+
+:root {
     --color-primario: rgb(47, 82, 115);
     --color-secundario: rgb(100, 188, 191);
     --color-texto: rgb(25, 25, 25);
-    --color-blanco:rgb(243, 243, 243);
+    --color-blanco: rgb(243, 243, 243);
 }
-body{
+
+body {
     background-color: var(--color-blanco);
     display: flex;
     flex-direction: column;
@@ -17,38 +19,45 @@ body{
     max-width: 800px;
     margin: 0 auto;
 }
-header{
+
+header {
     background-color: var(--color-primario);
     color: var(--color-blanco);
     font-size: 2em;
     padding: 1rem;
 }
-nav{
+
+nav {
     display: flex;
     gap: 1em;
     padding: 1em 0;
 }
-nav a{
+
+nav a {
     text-decoration: none;
     color: inherit;
     border-bottom: 1px solid var(--color-texto);
 }
-nav a:hover{
+
+nav a:hover {
     border-bottom: 3px solid var(--color-texto);
 }
-main{
+
+main {
     flex-grow: 1;
     display: flex;
     flex-direction: column;
-    gap:1em;
+    gap: 1em;
     position: relative;
 }
-footer{
+
+footer {
     background-color: var(--color-texto);
     color: var(--color-blanco);
     padding: 1em;
 }
-form{
+
+form {
     display: flex;
     flex-direction: column;
     padding: 1em;
@@ -56,10 +65,12 @@ form{
     background-color: var(--color-secundario);
     max-width: 300px;
 }
-form input{
+
+form input {
     padding: 0.3em;
 }
-.card{
+
+.card {
     color: inherit;
     text-decoration: none;
     font-weight: 600;
@@ -69,51 +80,83 @@ form input{
     background-color: var(--color-secundario);
     padding: 1em;
     width: 10em;
-    height: fit-content;
-    h2{
+
+    /*  height: fit-content; */
+    h2 {
         color: white;
     }
 }
-.card:hover{
+
+.card:hover {
     background-color: var(--color-primario);
     color: var(--color-blanco);
 }
 
-.cardCont{
+.cardCont {
     display: flex;
     gap: 1em;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: flex-start;
 }
 
-#usuario{
+#usuario {
     display: flex;
     flex-direction: column;
     gap: 0.3em;
     font-size: 1rem;
-color:white;
-align-items: center;
-a{
-    color:white;
-    text-decoration:none;
-}
+    color: white;
+    align-items: center;
+
+    a {
+        color: white;
+        text-decoration: none;
+    }
 }
 
-header{
+header {
     display: flex;
     justify-content: space-between;
 }
 
-.tablaProducto{
-border-collapse: collapse;
-width: 100%;
+.tablaProducto {
+    border-collapse: collapse;
+    width: 100%;
 }
 
-.tablaProducto th, 
-.tablaProducto td{
+.tablaProducto th,
+.tablaProducto td {
     border: 1px solid black;
     padding: 0.5em;
-    }
+}
 
-    .tablaProducto th{
-        background-color: var(--color-primario);
-        color: var(--color-blanco)
-    }
+.tablaProducto th {
+    background-color: var(--color-primario);
+    color: var(--color-blanco)
+}
+
+#carritoIcono {
+    position: absolute;
+    bottom: 5rem;
+    right: 3rem;
+    font-size: 3em;
+    cursor: pointer;
+}
+
+#carritoIconoCantidad {
+    position: absolute;
+    left: 0;
+    top: -1rem;
+    font-size: 2rem;
+    background-color: var(--color-primario);
+    color: var(--color-blanco);
+   text-align: center;
+    border-radius: 50%;
+    width: 2.2rem;
+    height: 2.2rem;
+}
+
+.carritoProducto{
+    font-size:2em ;
+    cursor: pointer;
+}
