@@ -150,3 +150,24 @@ export const listaProducto = async (req,res) => {
         return;
     }
 }
+
+export const postPedidos = async (req,res) => {
+ console.log("---> Controlador postPedidos en ejecucion");
+ console.log(req.body);   
+try {
+    // grabar el pedido de la BD
+    res.json({
+        ok: true,
+        mensaje: "PEDIDO RECIBIDO"
+    })
+    return
+
+} catch (error) {
+console.log("error en controlador postPedidos", error.message);
+res.json({
+    ok:false,
+    mensaje: "ERROR AL GRABAR PEDIDO EN BaseDatos"
+})    
+return
+}
+}

@@ -19,6 +19,7 @@ app.use(express.static("public"));  //palabra igual que la carpeta
 app.use(express.urlencoded({
     extended: false,
 }));
+app.use(express.json());
 
 app.use(session({
     secret: process.env.SESSION_SECRET,

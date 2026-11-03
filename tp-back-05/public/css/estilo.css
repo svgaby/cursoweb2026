@@ -160,3 +160,23 @@ header {
     font-size:2em ;
     cursor: pointer;
 }
+.screen{
+    background-color:  rgba(0, 0, 0, 0.515);
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    z-index: 5;
+    top:0;
+    left: 0;
+}
+
+.modal{
+background-color: var(--color-blanco);
+padding: 1em;
+z-index: 10;
+position: absolute;
+width: 500px;
+top: 5em;
+left: calc (50vw - 250px);
+
+}

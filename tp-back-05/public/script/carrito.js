@@ -59,8 +59,48 @@ document.querySelector("#carritoIcono").
             </tr>`).join("")}
         </tbody>
     </table>
-    </div>`;
-        document.querySelector("#modalCarrito").
-            innerHTML = htmlModal;
+    <input type="text" name="nombre" id="nombre" placeholder="Nombre" require>
+    <input type="text" name="contacto" id="contacto" placeholder="Contacto" require>
+    <button id="btnCerrar"> Cerrar</button>
+    <button id="btnEnviar">Enviar</button>
+
+    </div>
+    <div class="screen"></div>`;
+        document.querySelector("#modalCarrito").innerHTML = htmlModal;
+        document.querySelector("#btncerrar")
+            .addEventListener("click", () => {
+                document.querySelector("#modalCarrito").innerHTML = ""
+            });
+        document.querySelector("#btnEnviar")
+            .addEventListener("click", async () => {
+                //validar
+                if (carrito.length === 0) { return }
+                //levantar datos
+                const nombre = document.querySelector("#nombre").value;
+                const contacto = document.querySelector("#contacto").value;
+                console.log(nombre, contacto);
+                if (nombre == "" || contacto == "") { return }
+                //enviar pedido con fecht
+                try {
+                    let respuesta = await fetch("/productos/pedido/api", {
+                        method: "POST",
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify({
+                            nombre: nombre,
+                            contacto: contacto,
+                            producto: carrito
+                        })
+                    })
+                    respuesta = await respuesta.json();
+console.log(respuesta);
+                } catch (error) {
+console.log("Error al enviar pedido", error);
+                }
+            });
+
     })
 
+
+
+/* document.querySelector("#modalCarrito").
+        innerHTML = htmlModal; */
