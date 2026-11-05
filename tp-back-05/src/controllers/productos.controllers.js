@@ -153,9 +153,15 @@ export const listaProducto = async (req,res) => {
 
 export const postPedidos = async (req,res) => {
  console.log("---> Controlador postPedidos en ejecucion");
- console.log(req.body);   
+ // console.log(req.body);   
 try {
     // grabar el pedido de la BD
+    const respuesta = await serviciosProductos.crearPedido(req.body);
+ if (respuesta[0].affectedRows != 1) {
+            res.status(500).send("Ups, ocurrio un error");
+            return;
+        }
+
     res.json({
         ok: true,
         mensaje: "PEDIDO RECIBIDO"
@@ -170,4 +176,20 @@ res.json({
 })    
 return
 }
+}
+
+export const listaPedidos = async (req,res) => {
+    console.log("---> Controlador listaPedidos en ejecucion");
+    try {
+        // leer los producto
+        const pedidos ="LLAMAR SERVICIO"
+        //con los pro crear lista
+        const vista ="LLamar motor de vista pasando -> (pedido) "
+        //enviar lista
+        res.send(vista);
+    } catch (error) {
+         console.log("Error en listaPedidos", error.message);
+        res.status(503).send("Ups, ocurrio un error");
+        return;
+    }
 }

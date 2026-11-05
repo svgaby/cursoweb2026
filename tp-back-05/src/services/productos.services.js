@@ -48,7 +48,7 @@ export const updateProducto = async (id, body) => {
     console.log("servicio update producto ejecucion");
     try {
         const respuesta = await configDatabase.query(`UPDATE productos SET descripcion = "${body.descripcion}", precio= "${body.precio}", eliminado= "${body.eliminado}" WHERE id= ${id} `)
-return respuesta;
+        return respuesta;
 
     } catch (error) {
         console.error("Error en la servicio updateProducto" + error.message);
@@ -70,3 +70,17 @@ export const deleteProducto = async (id) => {
 }
 
 
+
+export const crearPedido = async (pedido) => {
+    console.log("servicio crearPedido en ejecucion");
+    try {
+        // Grabar pedidos en la BD
+const respuesta = await configDatabase.query( `INSERT INTO pedidos (nombre,contacto,pedido) VALUES ("${pedido.nombre}","${pedido.contacto}",'${JSON.stringify(pedido.productos)}')` );
+console.log(respuesta);
+return respuesta;
+    } catch (error) {
+        console.log("Error en la servicio crearPedido" , error.message);
+        throw new Error("ERROR servicio crearPedido");
+
+    }
+}

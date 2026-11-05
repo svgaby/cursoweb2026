@@ -25,7 +25,7 @@ export const mainDashboard = (user) => {
     <h1> Panel de control </h1>
     <div> BIENVENIDO ${user?.usuario || "usuario no logueado"}!!!!</div>
     <a href="/productos/lista" class="card"> 📦  Productos</a>
-    
+    <a href="/pedidos/lista" class="card"> 🛒  Pedidos</a>
     </main>
     <footer>
         Creado por LORD-SGON &copy;2026

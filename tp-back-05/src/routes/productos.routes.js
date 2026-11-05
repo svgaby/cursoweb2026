@@ -25,3 +25,6 @@ const limitadorPedidos = rateLimit({
     }
 })
 rutasProductos.post("/productos/pedido/api", limitadorPedidos, middlewaresMain.validarPedido, controllersProductos.postPedidos)
+
+
+rutasProductos.get("/pedidos/lista", middlewaresMain.verificarLogin, controllersProductos.listaPedidos)

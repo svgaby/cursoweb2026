@@ -14,9 +14,9 @@ document.querySelectorAll(".carritoProducto")    // . class  si es # id
 
             } else {
                 carrito.push({
-                    id: e.target.dataset.id,
+                    id: parseInt(e.target.dataset.id),
                     descripcion: e.target.dataset.descripcion,
-                    precio: e.target.dataset.precio,
+                    precio: parseFloat(e.target.dataset.precio),
                     cantidad: 1
 
                 })
@@ -88,7 +88,7 @@ document.querySelector("#carritoIcono").
                         body: JSON.stringify({
                             nombre: nombre,
                             contacto: contacto,
-                            producto: carrito
+                            productos: carrito
                         })
                     })
                     respuesta = await respuesta.json();
