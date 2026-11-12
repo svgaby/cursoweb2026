@@ -119,18 +119,22 @@ header {
     justify-content: space-between;
 }
 
-.tablaProducto {
+.tablaProducto,
+.tablaPedidos {
     border-collapse: collapse;
     width: 100%;
 }
 
 .tablaProducto th,
-.tablaProducto td {
+.tablaPedidos th,
+.tablaProducto td,
+.tablaPedidos td {
     border: 1px solid black;
     padding: 0.5em;
 }
 
-.tablaProducto th {
+.tablaProducto th,
+.tablaPedidos th  {
     background-color: var(--color-primario);
     color: var(--color-blanco)
 }

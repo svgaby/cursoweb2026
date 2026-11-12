@@ -84,3 +84,13 @@ return respuesta;
 
     }
 }
+
+export const getPedidos = async () => {
+    try {
+        const pedidos = await configDatabase.query(`SELECT * FROM pedidos`);
+        return pedidos;
+    } catch (error) {
+        console.error("Error en la query" + error.message);
+        throw new Error("ERROR EN QUERY EN LA BASE DE DATOS");
+    }
+}

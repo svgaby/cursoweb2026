@@ -182,9 +182,9 @@ export const listaPedidos = async (req,res) => {
     console.log("---> Controlador listaPedidos en ejecucion");
     try {
         // leer los producto
-        const pedidos ="LLAMAR SERVICIO"
+        const pedidos = await serviciosProductos.getPedidos();
         //con los pro crear lista
-        const vista ="LLamar motor de vista pasando -> (pedido) "
+        const vista = vistasProductos.vistaPedidosLista (pedidos[0]);
         //enviar lista
         res.send(vista);
     } catch (error) {
