@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es-ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo - El Faro Holístico</title>
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+
+    <header class="encabezado">
+        <div class="logo-titulo">
+            <img src="img/file.svg" alt="Logo El Faro Holístico" class="logo">
+	    <h1>FARO HOLISTICO</h1>
+            <h1>Servicios y Biocosmética</h1>
+        </div>
+
+        <nav class="botonera">
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="historia.html">Historia</a></li>
+                <li><a href="catalogo.html" class="activo">Productos</a></li>
+                <li><a href="formulario.html">Formulario</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="contenedor-principal">
+        
+        <!-- Sección de Búsqueda y Filtros -->
+        <section class="seccion-busqueda">
+            <h2>Buscador y Filtros</h2>
+            <div class="controles-filtro">
+                <input type="text" id="input-buscar" placeholder="Buscar servicio o producto...">
+                <select id="select-categoria">
+                    <option value="todos">Todas las categorías</option>
+                    <option value="Servicios">Servicios Holísticos</option>
+                    <option value="Biocosmética">Biocosmética</option>
+                </select>
+            </div>
+            <p id="mensaje-error-busqueda" class="mensaje-oculto">No se encontraron elementos coincidentes.</p>
+        </section>
+
+        <!-- Contenedor del Catálogo Dinámico (DOM) -->
+        <section class="seccion-catalogo">
+            <h2>Nuestra Propuesta</h2>
+            <div id="contenedor-tarjetas" class="grid-tarjetas">
+                {/* Las tarjetas se inyectan dinámicamente desde catalogo.js */}
+            </div>
+        </section>
+
+        <!-- Selección actual (Guarda en localStorage según la consigna) -->
+        <section class="seccion-seleccion">
+            <h3>Selección de Interés</h3>
+            <div id="lista-seleccionados">
+                <p>No hay elementos seleccionados.</p>
+            </div>
+            <a href="reserva.html" class="btn-ir-formulario">Ir a solicitar turno / pedido</a>
+        </section>
+
+    </main>
+
+    <footer class="pie-pagina">
+        <p>Creación Lord Sgon &copy; 2026 - El Faro Holístico</p>
+    </footer>
+
+    <!-- Script del Catálogo -->
+    <script src="js/catalogo.js"></script>
+</body>
+</html>

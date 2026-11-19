@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Compradores - El Faro Holístico</title>
+     <link rel="stylesheet" href="css/estilo.css">
+    <style>
+      
+        .campo { margin-bottom: 15px; }
+        label { display: block; font-weight: bold; margin-bottom: 5px; }
+        input, select, textarea { width: 100%; padding: 8px; box-sizing: border-box; }
+        .error { color: #d93025; font-size: 0.85em; margin-top: 4px; display: block; }
+        .exito { color: #188038; font-weight: bold; margin-top: 15px; }
+        button { padding: 10px 15px; background-color: #2e7d32; color: white; border: none; cursor: pointer; font-size: 1em; }
+        button:hover { background-color: #1b5e20; }
+    </style>
+</head>
+<body>
+ <header class="encabezado">
+        <div class="logo-titulo">
+            <img src="img/file.svg" alt="Logo El Faro Holístico" class="logo">
+	    <h1>FARO HOLISTICO</h1>
+            <h1>Servicios y Biocosmética</h1>
+        </div>
+
+        <nav class="botonera">
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="historia.html">Historia</a></li>
+                <li><a href="catalogo.html" class="activo">Productos</a></li>
+                <li><a href="formulario.html">Formulario</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <h2>Registro de Compradores</h2>
+
+    <form id="form-comprador" novalidate>
+        <div class="campo">
+            <label for="nombre">Nombre completo *</label>
+            <input type="text" id="nombre" placeholder="Ej: María Pérez">
+            <span class="error" id="error-nombre"></span>
+        </div>
+
+        <div class="campo">
+            <label for="dni">DNI *</label>
+            <input type="text" id="dni" placeholder="Solo números, sin puntos (Ej: 35123456)">
+            <span class="error" id="error-dni"></span>
+        </div>
+
+        <div class="campo">
+            <label for="fechaNacimiento">Fecha de nacimiento *</label>
+            <input type="date" id="fechaNacimiento">
+            <span class="error" id="error-fecha"></span>
+        </div>
+
+        <div class="campo">
+            <label for="email">Correo electrónico *</label>
+            <input type="email" id="email" placeholder="ejemplo@correo.com">
+            <span class="error" id="error-email"></span>
+        </div>
+
+        <div class="campo">
+            <label for="telefono">Teléfono *</label>
+            <input type="tel" id="telefono" placeholder="Ej: 1123456789">
+            <span class="error" id="error-telefono"></span>
+        </div>
+
+        <div class="campo">
+            <label for="domicilio">Domicilio *</label>
+            <input type="text" id="domicilio" placeholder="Calle, número, localidad">
+            <span class="error" id="error-domicilio"></span>
+        </div>
+
+        <div class="campo">
+            <label for="productoServicio">Productos y Servicios *</label>
+            <select id="productoServicio">
+                <option value="">-- Seleccione una opción --</option>
+                <option value="Sesión de Reiki Integral">Sesión de Reiki Integral (Servicio)</option>
+                <option value="Spray Áurico de Limpieza">Spray Áurico de Limpieza (Biocosmética)</option>
+                <option value="Escaneo con Péndulo Hebreo">Escaneo con Péndulo Hebreo (Servicio)</option>
+                <option value="Bálsamo Herbal Natural">Bálsamo Herbal Natural (Biocosmética)</option>
+            </select>
+            <span class="error" id="error-producto"></span>
+        </div>
+
+        <div class="campo">
+            <label for="comentarios">Comentarios (Opcional)</label>
+            <textarea id="comentarios" rows="3" placeholder="Aclaraciones sobre envío, horarios, etc."></textarea>
+        </div>
+
+        <button type="submit">Enviar Pedido</button>
+        <div id="mensaje-final" class="exito"></div>
+    </form>
+
+    <script src="js/validacion.js"></script>
+</body>
+</html>
